@@ -1,0 +1,41 @@
+package Term_2.Linked_Lists;
+import java.io.*;
+public class Linked_List
+{
+    Node Start;
+    BufferedReader in=new BufferedReader(new InputStreamReader(System.in));
+    void create()throws IOException
+    {
+        int n;
+        System.out.println("Enter the number of nodes to be created");
+        n=Integer.parseInt(in.readLine());
+        Start=new Node();
+        System.out.println("Enter the data for the first node");
+        Start.data=Integer.parseInt(in.readLine());
+        Start.next=null;
+        Node current=Start;
+        System.out.println(current);
+        System.out.println(current.next);
+        Node temp;
+        int i;
+        for(i=1;i<n;i++)
+        {
+            temp=new Node();
+            System.out.println("Enter the data for the node");
+            temp.data=Integer.parseInt(in.readLine());
+            temp.next=null;
+            current.next=temp;
+            current=temp;
+        }
+    }
+    
+    void display()
+    {
+        Node current=start;
+        while(current!=null)
+        {
+            System.out.println(current.data);
+            current=current.next;
+        }
+    }
+}
